@@ -1,0 +1,98 @@
+<meta charset="utf-8">
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+<style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both
+  }
+  
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden
+    }
+    to {
+      visibility: visible
+    }
+  }
+  
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden
+    }
+    to {
+      visibility: visible
+    }
+  }
+  
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden
+    }
+    to {
+      visibility: visible
+    }
+  }
+  
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden
+    }
+    to {
+      visibility: visible
+    }
+  }
+  
+  @keyframes -amp-start {
+    from {
+      visibility: hidden
+    }
+    to {
+      visibility: visible
+    }
+  }
+</style>
+<noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+{{ with .Title }}
+  <title> {{ . }}</title>
+{{ end }}
+
+{{ with .Site.Params.description }}
+<meta name="description" content="{{ . }}">
+{{ end }}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
+<link rel="stylesheet" href="
+{{ " css/bootstrap.min.css " | absURL }}">
+<link rel="stylesheet" href="
+{{ " css/font-awesome.min.css " | absURL }}">
+<link rel="stylesheet" href="
+{{ " css/owl.carousel.css " | absURL }}">
+<link rel="stylesheet" href="
+{{ " css/owl.theme.css " | absURL }}">
+<link rel="stylesheet" href="
+{{ " css/animate.css " | absURL }}">
+<!-- Theme stylesheet, if possible do not edit this stylesheet -->
+
+{{ with .Site.Params.style }}
+<link href="
+{{ printf " css/style.%s.css " . | absURL }}" rel="stylesheet" id="theme-stylesheet"> {{ else }}
+<link href="
+{{ " css/style.default.css " | absURL }}" rel="stylesheet" id="theme-stylesheet"> {{ end }}
+<!-- Custom stylesheet - for your changes -->
+<link href="
+{{ " css/custom.css " | absURL }}" rel="stylesheet">
+<link rel="shortcut icon" href="
+{{ " img/favicon.png " | absURL }}"> {{ if .RSSLink }}
+<link href="
+{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="
+{{ .Site.Title }}" />
+<link href="
+{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="
+{{ .Site.Title }}" /> {{ end }} {{ template "_internal/google_analytics_async.html" . }}
